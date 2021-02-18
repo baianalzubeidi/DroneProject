@@ -18,7 +18,7 @@ timer = time.time()
 
 #-------------------------
 myDrone = IntializeTello()
-eq
+
 while True:
     
 
@@ -39,8 +39,40 @@ while True:
         #myDrone.land()
     
     if keyboard.is_pressed('e'):
-        print("forward")
+        print("takeoff")
         myDrone.takeoff()
+    
+    if keyboard.is_pressed('w'):
+        print("forward")
+        myDrone.move_forward(20)
+
+    if keyboard.is_pressed('s'):
+        print("backward")
+        myDrone.move_back(20)
+
+    if keyboard.is_pressed('a'):
+        print("left")
+        myDrone.move_left(20)
+    
+    if keyboard.is_pressed('d'):
+        print("right")
+        myDrone.move_right(20)
+    
+    if keyboard.is_pressed('+'):
+        print("up")
+        myDrone.move_up(20)
+    
+    if keyboard.is_pressed('-'):
+        print("down")
+        myDrone.move_down(20)
+
+    if keyboard.is_pressed('r'):
+        print("cw")
+        myDrone.rotate_clockwise(90)
+
+    if keyboard.is_pressed('f'):
+        print("ccw")
+        myDrone.rotate_counter_clockwise(90)
 
     if keyboard.is_pressed('q'):
         print("land drone")
