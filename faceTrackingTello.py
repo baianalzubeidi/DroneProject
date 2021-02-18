@@ -2,6 +2,8 @@ from utlis import *
 import cv2
 import time
 import sys
+import pynput
+import keyboard
 
 w,h = 360,240
 #PID      Kp    Ki   Kd
@@ -10,7 +12,7 @@ pidFB  = [0.01, 0.5, 0]
 pidUD  = [0.5,  0.5, 0]
 
 pError = 0
-startCounter = 1 # to takeoff 0 , for no flying
+startCounter = 0 # to takeoff 0 , for no flying
 save = False
 timer = time.time()
 
@@ -53,23 +55,23 @@ while True:
         startCounter +=1
         timer = time.time()
     
-    if (startCounter ==6 and currenttime - timer > 10):
-        myDrone.rotate_counter_clockwise(90)
-        startCounter +=1
-        timer = time.time()
+    #if (startCounter ==6 and currenttime - timer > 10):
+        #myDrone.rotate_counter_clockwise(90)
+        #startCounter +=1
+        #timer = time.time()
     
-    if (startCounter ==7 and currenttime - timer > 10):
-        myDrone.move_forward(150)
-        timer = time.time()
-        startCounter +=1
+    #if (startCounter ==7 and currenttime - timer > 10):
+        #myDrone.move_forward(150)
+        #timer = time.time()
+        #startCounter +=1
     
-    if (startCounter ==8 and currenttime - timer > 10):
-        myDrone.land()
-        startCounter +=1
-        timer = time.time()
+    #if (startCounter ==8 and currenttime - timer > 10):
+        #myDrone.land()
+        #startCounter +=1
+        #timer = time.time()
 
-    if (startCounter ==9 and currenttime - timer > 10):
-        break
+    #if (startCounter ==9 and currenttime - timer > 10):
+        #break
 
 
     img = telloGetFrame(myDrone,w ,h)
@@ -78,15 +80,24 @@ while True:
     
 
 
-    if cv2.waitKey(1) & 0xFF == ord("s"):
-        save = True
+    #if cv2.waitKey(1) & 0xFF == ord("s"):
+        #save = True
 
     if (save == True and info[0][0] != 0 ):
         saveImage(info, img)
         save = False
 
-    if cv2.waitKey(1) & 0xFF == ord("q"):
+    #if cv2.waitKey(1) & 0xFF == ord("q"):
+        #myDrone.land()
+    
+    if keyboard.is_pressed('w'):
+        print("forward")
+        myDrone.move_forward()
+
+    if keyboard.is_pressed('q'):
+        print("land drone")
         myDrone.land()
+
 
 cv2.destroyAllWindows()
 myDrone.streamoff()
