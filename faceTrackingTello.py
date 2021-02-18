@@ -18,61 +18,9 @@ timer = time.time()
 
 #-------------------------
 myDrone = IntializeTello()
-
-#missionOne(myDrone)
-
+eq
 while True:
-    currenttime = time.time()
     
-
-    if (startCounter ==0 and currenttime - timer > 10):
-        myDrone.takeoff()
-        timer = time.time() 
-        startCounter +=1
-
-    if (startCounter ==1 and currenttime - timer > 10):
-        myDrone.move_forward(150)
-        timer = time.time()
-        startCounter +=1
-            
-    if (startCounter ==2 and currenttime - timer > 10):
-        myDrone.rotate_counter_clockwise(90)
-        startCounter +=1
-        timer = time.time()
-
-    if (startCounter ==3 and currenttime - timer > 10):
-        myDrone.move_forward(20)
-        timer = time.time()
-        startCounter +=1
-
-    if (startCounter ==4 and currenttime - timer > 10):
-        save = True
-        startCounter +=1    
-        timer = time.time()
-    
-    if (startCounter ==5 and currenttime - timer > 10):
-        myDrone.move_back(20)
-        startCounter +=1
-        timer = time.time()
-    
-    #if (startCounter ==6 and currenttime - timer > 10):
-        #myDrone.rotate_counter_clockwise(90)
-        #startCounter +=1
-        #timer = time.time()
-    
-    #if (startCounter ==7 and currenttime - timer > 10):
-        #myDrone.move_forward(150)
-        #timer = time.time()
-        #startCounter +=1
-    
-    #if (startCounter ==8 and currenttime - timer > 10):
-        #myDrone.land()
-        #startCounter +=1
-        #timer = time.time()
-
-    #if (startCounter ==9 and currenttime - timer > 10):
-        #break
-
 
     img = telloGetFrame(myDrone,w ,h)
     img, info = findFace(img)
@@ -90,9 +38,9 @@ while True:
     #if cv2.waitKey(1) & 0xFF == ord("q"):
         #myDrone.land()
     
-    if keyboard.is_pressed('w'):
+    if keyboard.is_pressed('e'):
         print("forward")
-        myDrone.move_forward()
+        myDrone.takeoff()
 
     if keyboard.is_pressed('q'):
         print("land drone")
