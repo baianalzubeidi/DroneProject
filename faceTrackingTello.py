@@ -26,5 +26,50 @@ def hello_world():
 
 @app.route('/takeoff')
 def takeoff():
-    #myDrone.takeoff()
+    myDrone.takeoff()
     return 'takeoff'
+
+@app.route('/forward')
+def forward():
+    myDrone.move_forward(20)
+    return 'forward'
+
+@app.route('/backward')
+def backward():
+    myDrone.move_back(20)
+    return 'backward'
+
+@app.route('/left')
+def left():
+    myDrone.move_left(20)
+    return 'left'
+
+@app.route('/right')
+def move_right():
+        myDrone.move_right(20)
+        return 'right'
+
+@app.route('/up')
+def move_up():
+        myDrone.move_up(20)
+        return 'up'
+
+@app.route('/down')
+def move_down():
+        myDrone.move_down(20)
+        return 'down'
+
+@app.route('/cw')
+def rotate_clockwise():
+        myDrone.rotate_clockwise(90)
+        return 'cw'
+        
+@app.route('/ccw')
+def rotate_counter_clockwise():
+        myDrone.rotate_counter_clockwise(90)
+        return 'ccw'
+
+@app.route('/land')
+def land():
+    myDrone.land()
+    return 'land'
