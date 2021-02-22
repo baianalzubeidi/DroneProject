@@ -3,6 +3,7 @@ import cv2
 import time
 import sys
 from flask import Flask
+from flask import render_template
 
 app = Flask(__name__)
 
@@ -22,54 +23,54 @@ myDrone = IntializeTello()
 
 @app.route('/')
 def hello_world():
-    return 'Hello, World!'
+    return render_template('TelloDrone.html')
 
 @app.route('/takeoff')
 def takeoff():
     myDrone.takeoff()
-    return 'takeoff'
+    return render_template('TelloDrone.html')
 
 @app.route('/forward')
 def forward():
     myDrone.move_forward(20)
-    return 'forward'
+    return render_template('TelloDrone.html')
 
 @app.route('/backward')
 def backward():
     myDrone.move_back(20)
-    return 'backward'
+    return render_template('TelloDrone.html')
 
 @app.route('/left')
 def left():
     myDrone.move_left(20)
-    return 'left'
+    return render_template('TelloDrone.html')
 
 @app.route('/right')
 def move_right():
-        myDrone.move_right(20)
-        return 'right'
+    myDrone.move_right(20)
+    return render_template('TelloDrone.html')
 
 @app.route('/up')
 def move_up():
-        myDrone.move_up(20)
-        return 'up'
+    myDrone.move_up(20)
+    return render_template('TelloDrone.html')
 
 @app.route('/down')
 def move_down():
-        myDrone.move_down(20)
-        return 'down'
+    myDrone.move_down(20)
+    return render_template('TelloDrone.html')
 
 @app.route('/cw')
 def rotate_clockwise():
-        myDrone.rotate_clockwise(90)
-        return 'cw'
+    myDrone.rotate_clockwise(90)
+    return render_template('TelloDrone.html')
         
 @app.route('/ccw')
 def rotate_counter_clockwise():
-        myDrone.rotate_counter_clockwise(90)
-        return 'ccw'
+    myDrone.rotate_counter_clockwise(90)
+    return render_template('TelloDrone.html')
 
 @app.route('/land')
 def land():
     myDrone.land()
-    return 'land'
+    return render_template('TelloDrone.html')
