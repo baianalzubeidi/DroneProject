@@ -1,0 +1,13 @@
+body                     {background-color: beige;}
+h1                       {color: grey;font-family: "Lucida Console", "Courier New", monospace;}
+#head                    {max-width: 100%; height: auto;} 
+.p1                      {font-family: "Lucida Console", "Courier New", monospace;}
+#mylinks                 {list-style-type: square; position: absolute; top: 450px; left: 2px; width: 2000px}
+#mylinks ul              {list-style-type: none; padding: 0px; margin: 0px}
+#mylinks li              {display: inline; float: left; font-size: 14px; margin-right: 10px;
+                            background: url(right.jpg) no-repeat 100% 50%; color: white}
+
+#mylinks a               {display: block; color: white; text-decoration: none;
+                            background: url(Nasty-Fabric-Grey-Pattern-for-Website-Background.jpg) no-repeat 0% 50%; padding: 4px 15px}
+
+a:visited                {color: blue;}
