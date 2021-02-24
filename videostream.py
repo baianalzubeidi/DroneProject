@@ -1,5 +1,4 @@
 from utlis import *
-import cv2
 import sys
 
 w,h = 360,240
@@ -14,9 +13,9 @@ save = False
 
 #-------------------------
 myDrone = IntializeTello()
+filename = 'savedImage.jpg'
+directory = r"/Users/byoon/PycharmProjects/internship/venv/lib/python3.7/DroneProject/"
 
-while True:
+def screenshot():
     img = telloGetFrame(myDrone,w ,h)
-    cv2.imshow("image",img)
-    if cv2.waitKey(1) & 0xFF == ord('q'):
-        break
+    cv2.imwrite(directory + filename, img)
