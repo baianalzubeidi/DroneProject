@@ -1,13 +1,19 @@
-body                     {background-color: beige;}
-h1                       {color: grey;font-family: "Lucida Console", "Courier New", monospace;}
-#head                    {max-width: 100%; height: auto;} 
+body                     {background-color:whitesmoke;}
+h1                       {color: grey;font-family: "Lucida Console", "Courier New", monospace; top:200px; text-align: center}
+p                        {color: grey;font-family: "Lucida Console", "Courier New", monospace; margin:20px}
+#head                    {max-width: 100%; height: auto; margin-left: 100px} 
 .p1                      {font-family: "Lucida Console", "Courier New", monospace;}
-#mylinks                 {list-style-type: square; position: absolute; top: 450px; left: 2px; width: 2000px}
+#mylinks                 {list-style-type: square; position: absolute; top: 100px; left: 2px; width: 2000px;margin:10px}
 #mylinks ul              {list-style-type: none; padding: 0px; margin: 0px}
 #mylinks li              {display: inline; float: left; font-size: 14px; margin-right: 10px;
-                            background: url(right.jpg) no-repeat 100% 50%; color: white}
+                            color: white; padding:5px;}
 
 #mylinks a               {display: block; color: white; text-decoration: none;
-                            background: url(Nasty-Fabric-Grey-Pattern-for-Website-Background.jpg) no-repeat 0% 50%; padding: 4px 15px}
+                            background: url(black.jpg) no-repeat 0% 50%; padding: 4px 15px; border-radius: 12px;}
 
 a:visited                {color: blue;}
+#mainContent             {position: absolute; top: 450px; left: 5em; width: 830px}
+#bottom                  {position: absolute; top: 700px; left: 200px; width: 830px;text-align: center}
+#caption                 {font-size: 10px; float:right; margin-right: 5em}
+#leftborder              {margin-right: 5em; padding-right: 1em;border-right: 0.1em solid black}
+#rightborder             {margin-left: 5em; padding-left: 1em;border-left: 0.1em solid black}
