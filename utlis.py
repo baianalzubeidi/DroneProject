@@ -88,13 +88,6 @@ def trackFace(myDrone, info, w, h, pidYaw, pidFB, pidUD, pError):
     
     return error
 
-def missionOne (myDrone):
-    myDrone.takeoff()
-    myDrone.move_forward(50)
-    myDrone.rotate_clockwise(90)
-    myDrone.move_forward(20)
-    return
-
 def faceDetect (img, info):
     while True:
         img = telloGetFrame(myDrone,w,h)
@@ -105,12 +98,3 @@ def faceDetect (img, info):
         if (info[0][0] != 0 ):
             saveImage(info, img)
             break
-    return 
-
-
-def missionTwo (myDrone):
-    myDrone.move_back(50)
-    myDrone.rotate_clockwise(90)
-    myDrone.move_forward(50)
-    myDrone.land()
-    return
