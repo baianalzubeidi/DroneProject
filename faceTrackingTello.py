@@ -64,4 +64,4 @@ def land():
 @app.route('/picture')
 def picture():
     screenshot()
-    return send_file(directory + filename, mimetype='image/jpeg')
+    return render_template('TelloDrone.html')

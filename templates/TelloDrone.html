@@ -35,8 +35,12 @@
   <a href="http://127.0.0.1:5000/picture">Picture</a>
 </div>
 <div> 
-<img src="{{url_for('static', filename='savedImage.jpg')}}" />
+<img id="droneImage" />
 </div>
 </div>
+<script>
+  var myImage = document.getElementById("droneImage")
+  myImage.src = "{{url_for('static', filename='savedImage.jpg')}}" + '?dummy=' + Math.random();
+</script>
 </body>
 </html>
