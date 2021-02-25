@@ -8,13 +8,13 @@ pidFB  = [0.01, 0.5, 0]
 pidUD  = [0.5,  0.5, 0]
 
 pError = 0
-startCounter = 0 # to takeoff 0 , for no flying
+startCounter = 0 # takeoff 0 , 1 for not flying the drone
 save = False
 
 #-------------------------
 myDrone = IntializeTello()
 filename = 'savedImage.jpg'
-directory = r"/Users/byoon/PycharmProjects/internship/venv/lib/python3.7/DroneProject/"
+directory = r"/Users/byoon/PycharmProjects/internship/venv/lib/python3.7/DroneProject/static/"
 
 def screenshot():
     img = telloGetFrame(myDrone,w ,h)

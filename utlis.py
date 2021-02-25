@@ -4,7 +4,7 @@ import numpy as np
 import os
 import time
 
-directory = r"/Users/byoon/PycharmProjects/internship/venv/lib/python3.7/site-packages/DroneProject/face "
+directory = r"/Users/byoon/PycharmProjects/internship/venv/lib/python3.7/site-packages/DroneProject/face"
 imgDirectory = r"/Users/byoon/PycharmProjects/internship/venv/lib/python3.7/site-packages/DroneProject"
 
 def IntializeTello():
